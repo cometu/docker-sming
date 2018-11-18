@@ -2,7 +2,10 @@
 sming in a docker
 
 ## Dependencies
-  - Docker
+  - Docke
+  
+  If you don't want to use a docker, you can follow the list of command detail there: https://hub.docker.com/r/cometurrata/sming/
+  to install Sming on your machine
 
 ## Advices:
 
