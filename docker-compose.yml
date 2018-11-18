@@ -1,0 +1,31 @@
+version: '2.1'
+services:
+  build:
+    build: . 
+    command: bash -c "make; chmod -R o+rw out/build; chmod -R o+rw out/firmware;"
+    volumes:
+      - .:/app
+
+  clean:
+    build: . 
+    command: make clean
+    volumes:
+      - .:/app
+
+  upload:
+    build: . 
+    command: make flash 
+    volumes:
+      - .:/app
+    devices:
+      - "${TTY_PATH:-/dev/ttyUSB0}:/dev/ttyUSB0"
+
+  flashinit:
+    build: .
+    command: make flashinit
+    volumes:
+      - .:/app
+    devices:
+        - "${TTY_PATH:-/dev/ttyUSB0}:/dev/ttyUSB0"
+
+
