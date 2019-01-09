@@ -31,7 +31,9 @@ DISABLE_SPIFFS = 1
 
 ## Usage
 
-You should copy the `Dockerfile` and the `docker-compose.yml` files to the project you want to build, then run the following commands:
+You should copy the `Dockerfile`, `docker-compose.yml` and `.env` files to the project you want to build. Update the `.env` file with your project name and other options.
+
+Then run the following commands:
 
 build
 ```bash
