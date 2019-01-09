@@ -1,19 +1,22 @@
 version: '2.1'
 services:
   build:
-    build: . 
+    build: .
+    image: "sming/${PROJECT_NAME}"
     command: bash -c "make; chmod -R o+rw out/build; chmod -R o+rw out/firmware;"
     volumes:
       - .:/app
 
   clean:
-    build: . 
+    build: .
+    image: "sming/${PROJECT_NAME}"
     command: make clean
     volumes:
       - .:/app
 
   upload:
-    build: . 
+    build: .
+    image: "sming/${PROJECT_NAME}"
     command: make flash 
     volumes:
       - .:/app
@@ -22,6 +25,7 @@ services:
 
   flashinit:
     build: .
+    image: "sming/${PROJECT_NAME}"
     command: make flashinit
     volumes:
       - .:/app
